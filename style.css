@@ -1,0 +1,121 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.weather-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.weather-box:hover {
+    transform: translateY(-5px);
+}
+
+.weather-box h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: background 0.3s;
+}
+
+input[type="text"]::placeholder {
+    color: #e0e0e0;
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.error {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 15px;
+}
