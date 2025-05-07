@@ -27,10 +27,6 @@ Visiting Hours:
 - ICU and Isolation Units: Limited access with prior approval
 - No visitors allowed for COVID-19 positive patients
 
-COVID-19 Services:
-- PCR and Antigen Testing available
-- COVID-19 Vaccination (Pfizer, Sinopharm)
-- Dedicated isolation facilities for immunocompromised patients
 
 Charity & Financial Support:
 - Up to 75% of cancer patients receive free treatment
