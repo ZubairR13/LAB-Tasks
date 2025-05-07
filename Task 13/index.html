@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaukat Khanum Hospital Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Shaukat Khanum Hospital Logo" class="logo">
+            <h1>Shaukat Khanum Hospital Assistant</h1>
+        </div>
+
+        <div id="chat-box" class="chat-box"></div>
+
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="user-input" placeholder="Ask a question..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const input = document.getElementById('user-input');
+        const chatBox = document.getElementById('chat-box');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userText = input.value;
+            if (!userText) return;
+
+            appendMessage('You', userText);
+            input.value = '';
+
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userText })
+            });
+
+            const data = await response.json();
+            appendMessage('Assistant', data.response);
+        });
+
+        function appendMessage(sender, message) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message');
+            msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
