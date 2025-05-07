@@ -25,7 +25,6 @@ Doctor Consultations:
 Visiting Hours:
 - In-patient visiting hours: 12:00 PM – 2:00 PM
 - ICU and Isolation Units: Limited access with prior approval
-- No visitors allowed for COVID-19 positive patients
 
 
 Charity & Financial Support:
